@@ -7,7 +7,7 @@ class GlobalSetting
   end
 
   def self.load_defaults
-    default_provider = FileProvider.from(File.expand_path('../../../config/discourse_defaults.conf', __FILE__))
+    default_provider = FileProvider.from(File.expand_path('../../../config/discourse.conf', __FILE__))
     default_provider.keys.concat(@provider.keys).uniq.each do |key|
       default = default_provider.lookup(key, nil)
       define_singleton_method(key) do

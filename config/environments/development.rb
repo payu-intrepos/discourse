@@ -33,7 +33,16 @@ Discourse::Application.configure do
   config.handlebars.precompile = false
 
   # we recommend you use mailcatcher https://github.com/sj26/mailcatcher
-  config.action_mailer.smtp_settings = { address: "localhost", port: 1025 }
+  # config.action_mailer.smtp_settings = { address: "smtp.mandril.com", port: 587 }
+
+  config.action_mailer.smtp_settings = {
+    :address   => "smtp.mandrillapp.com",
+    :port      => 587, # ports 587 and 2525 are also supported with STARTTLS
+    :user_name => "sandeep.kumar@payu.in",
+    :password => "rZJchzMIJMzI4ZfM7SA65w"
+  }
+
+  config.action_mailer.delivery_method = :smtp
 
   config.action_mailer.raise_delivery_errors = true
 

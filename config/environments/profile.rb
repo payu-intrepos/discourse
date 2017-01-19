@@ -28,7 +28,13 @@ Discourse::Application.configure do
   config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for nginx
 
   # we recommend you use mailcatcher https://github.com/sj26/mailcatcher
-  config.action_mailer.smtp_settings = { address: "localhost", port: 1025 }
+  # config.action_mailer.smtp_settings = { address: "localhost", port: 1025 }
+  config.action_mailer.smtp_settings = {
+    :address   => "smtp.mandrillapp.com",
+    :port      => 587, # ports 587 and 2525 are also supported with STARTTLS
+    :user_name => 'prashanth.susarla@payu.in',
+    :password  => 'ES-WnUEOxFIYlEXm9yjogg'
+  }
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify

@@ -39,7 +39,7 @@ Discourse::Application.configure do
 
     config.action_mailer.smtp_settings = settings.reject{|_, y| y.nil?}
   else
-    config.action_mailer.delivery_method = :sendmail
+    config.action_mailer.delivery_method = :smtp
     config.action_mailer.sendmail_settings = {arguments: '-i'}
   end
 
